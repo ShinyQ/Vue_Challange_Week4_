@@ -11,7 +11,7 @@
 </template>
 
 <script>
- import axios from 'axios'
+import checkLogin from '@/mixins/checkLogin.js'
 // @ is an alias to /src
 import MoviesApi from '@/components/MoviesApi.vue'
 
@@ -28,6 +28,7 @@ export default {
     mounted: function () {
        console.log(this.$store.dispatch('home/getFilms'))
        this.$store.dispatch('home/getFilms')
-    }
+    },
+    mixins:[checkLogin]
   }
 </script>

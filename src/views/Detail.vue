@@ -7,6 +7,7 @@
 
 <script>
   import axios from 'axios'
+  import checkLogin from '@/mixins/checkLogin.js'
   import DetailFilm from '@/components/DetailFilm.vue'
   export default {
     name: 'Detail',
@@ -17,7 +18,8 @@
         return {
             films:[] 
         }
-    }, 
+    },
+    mixins:[checkLogin] 
   }
 </script>
 <style>
