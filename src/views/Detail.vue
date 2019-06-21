@@ -1,13 +1,11 @@
 <template>
    <div id="detail" style="margin-top:5%!important">
-        <router-link class="buttonDetail button-detail" to="/"><- Kembali Ke Home</router-link>
         <DetailFilm></DetailFilm>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
-  import checkLogin from '@/mixins/checkLogin.js'
   import DetailFilm from '@/components/DetailFilm.vue'
   export default {
     name: 'Detail',
@@ -19,10 +17,45 @@
             films:[] 
         }
     },
-    mixins:[checkLogin] 
   }
 </script>
 <style>
+    .buttonOrder
+    {
+      float:right!important;
+      color: #fff;
+      background-color: #5cb85c;
+      border-color: #4cae4c;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;  
+      width: 150px;
+      font-size: 16px
+    }
+
+    .buttonOrder:hover{
+      background: #5fe85f;
+    }
+
+    p{
+      text-indent: 15px;
+      text-align: justify
+    }
+    
+    @media screen and (max-width: 600px) {
+      .image{
+        display:block;
+        margin:auto;
+      }
+    }
+
     .back{
         text-decoration: none!important;
     }
@@ -55,4 +88,6 @@
     text-decoration: none;
     background: #00475f
   }
+
+
 </style>

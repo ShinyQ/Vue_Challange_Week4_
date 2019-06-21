@@ -27,6 +27,13 @@ const moduleHome = {
         .then((response) => {
           // console.log(response.data.items)
           commit('setMovie', response.data.items)
+        }).catch(error => {
+          if (!error.response) {
+            // network error
+            this.errorStatus = 'Error: Network Error'
+          } else {
+            this.errorStatus = error.response.data.message
+          }
         })
     }
   }
@@ -55,6 +62,7 @@ const moduleDetail = {
 }
 
 const moduleLogin = {
+  namespaced: true,
   state: {
     data: {
       user: [],
@@ -71,7 +79,7 @@ const moduleLogin = {
   },
   actions: {
     doLogin({ commit }, payload) {
-      axios.post('http://10.30.30.155:8000/api/login', {
+      axios.post('http://localhost:8000/api/login', {
         email: payload.email,
         password: payload.password
       }).then(function (response) {

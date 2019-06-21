@@ -11,7 +11,6 @@
       </div>
 
   </div>
-{{ user }}
     </div>
 </template>
 
@@ -40,8 +39,6 @@ export default {
                 email: this.email,
                 password: this.password
             }
-            const dataUserNew = JSON.stringify(payload)
-            // localStorage.setItem("dataUser", dataUserNew)
             this.$store.dispatch('login/doLogin', payload);
         }
     },
