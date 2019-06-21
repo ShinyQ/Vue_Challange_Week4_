@@ -9,10 +9,6 @@
   </div>
 </template>
 <style>
- #app{
-   background: #424242
- }
-
  .button {
    margin:0;
     border: none;
