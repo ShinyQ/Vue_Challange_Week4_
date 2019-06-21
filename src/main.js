@@ -11,3 +11,11 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
+const vm = new Vue({
+  store,
+  router,
+  render: h => h(App)
+}).$mount('#app')
+
+export { vm }

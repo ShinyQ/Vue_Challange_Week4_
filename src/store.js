@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { vm } from '@/main'
 
 Vue.use(Vuex)
 
@@ -95,7 +96,7 @@ const moduleLogin = {
           commit('setUser', response.data)
           const dataUser = JSON.stringify(response.data)
           localStorage.setItem('dataUser', dataUser)
-          this.$router.push('/')
+          vm.$router.push('/')
         }).catch(function (error) {
           console.log(error)
           if (error.response.status === 422) {
@@ -107,10 +108,33 @@ const moduleLogin = {
   }
 }
 
+const moduleBooking = {
+  namespaced: true,
+  state: {
+    data: {
+      films: []
+    }
+  },
+  mutations: {
+    setMovie(state, payload) {
+      state.data.films = payload
+    }
+  },
+  actions: {
+    getFilms({ commit }, id) {
+      axios.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=56598d890c1a31aeed1fc0a5daddec30&language=en')
+        .then((response) => {
+          commit('setMovie', response.data)
+        })
+    }
+  }
+}
+
 export default new Vuex.Store({
   modules: {
     home: moduleHome,
     detail: moduleDetail,
-    login: moduleLogin
+    login: moduleLogin,
+    booking: moduleBooking
   }
 })

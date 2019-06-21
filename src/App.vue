@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css" rel="stylesheet"> 
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+    
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li style="float:right"><router-link to="/login">Login</router-link></li>
+    </ul>
+
     <router-view/>
   </div>
 </template>
@@ -30,5 +32,6 @@
   .button:hover{
     text-decoration: none;
   }
+
 </style>
 
