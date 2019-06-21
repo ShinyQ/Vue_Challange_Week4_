@@ -1,7 +1,9 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="container-fluid">
+      <h1>Moviex Movies</h1>
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </div>
   </div>
 </template>
 
@@ -16,3 +18,8 @@ export default {
   }
 }
 </script>
+<style>
+  h1{
+    color: white;
+  }
+</style>
