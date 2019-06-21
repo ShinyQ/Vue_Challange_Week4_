@@ -3,13 +3,19 @@
   <div class="wrapper">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      
-      <div class="form-signin">       
-        <h2 class="form-signin-heading">Halaman Login</h2>
-        <input type="text" class="form-control" v-model="email" placeholder="email">{{ error.email }}
-        <input type="password" v-model="password" class="form-control" name="password" placeholder="Password" required=""/>  {{ error.password }}     
+      <div class="form-signin">     
+        
+        <h2 class="form-signin-heading"><center>Halaman Login</center></h2>
+        <center><font color="red"><b>{{ error }}</b></font> </center>
+        <center><font color="green"><b>{{ success }}</b></font> </center> 
+        <input type="text" class="form-control" v-model="email" placeholder="email">
+        <br>
+        <input type="password" v-model="password" class="form-control" name="password" placeholder="Password" required=""/>   
         <button @click="login()" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+         
       </div>
 
+      
   </div>
     </div>
 </template>
@@ -31,6 +37,9 @@ export default {
         },
         error() {
             return this.$store.state.login.data.error
+        },
+        success() {
+            return this.$store.state.login.data.success
         }
     },
     methods: {
@@ -48,7 +57,7 @@ export default {
 <style>
 
 .wrapper {
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 80px;
 }
 
@@ -61,14 +70,15 @@ export default {
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .form-signin .checkbox {
   font-weight: normal;
 }
 .form-signin .form-control {
   position: relative;
-  font-size: 16px;
+  font-size: 12px;
   height: auto;
   padding: 10px;
 }
@@ -77,6 +87,7 @@ export default {
 }
 .form-signin input[type="text"] {
   margin-bottom: -1px;
+  margin-top: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

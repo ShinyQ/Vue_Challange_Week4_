@@ -22,7 +22,7 @@
 <style>
     .buttonOrder
     {
-      float:right!important;
+      float: right!important;
       color: #fff;
       background-color: #5cb85c;
       border-color: #4cae4c;
